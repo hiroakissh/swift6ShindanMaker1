@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3870EB6EEB9742B7755FC646 /* Pods_swift6ShindanMaker1.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0C07B67D9ABA5CF2142559A5 /* Pods_swift6ShindanMaker1.framework */; };
 		535FC81526D4919D0024E865 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 535FC81426D4919D0024E865 /* LoginViewController.swift */; };
+		535FC81726D494860024E865 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 535FC81626D494860024E865 /* GoogleService-Info.plist */; };
 		536821C526D31B9100EABAB8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536821C426D31B9100EABAB8 /* AppDelegate.swift */; };
 		536821C726D31B9100EABAB8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536821C626D31B9100EABAB8 /* SceneDelegate.swift */; };
 		536821C926D31B9100EABAB8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 536821C826D31B9100EABAB8 /* ViewController.swift */; };
@@ -20,6 +21,7 @@
 /* Begin PBXFileReference section */
 		0C07B67D9ABA5CF2142559A5 /* Pods_swift6ShindanMaker1.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_swift6ShindanMaker1.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		535FC81426D4919D0024E865 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		535FC81626D494860024E865 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		536821C126D31B9100EABAB8 /* swift6ShindanMaker1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = swift6ShindanMaker1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		536821C426D31B9100EABAB8 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		536821C626D31B9100EABAB8 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -90,6 +92,7 @@
 				536821CD26D31B9200EABAB8 /* Assets.xcassets */,
 				536821CF26D31B9200EABAB8 /* LaunchScreen.storyboard */,
 				536821D226D31B9200EABAB8 /* Info.plist */,
+				535FC81626D494860024E865 /* GoogleService-Info.plist */,
 			);
 			path = swift6ShindanMaker1;
 			sourceTree = "<group>";
@@ -162,6 +165,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				536821D126D31B9200EABAB8 /* LaunchScreen.storyboard in Resources */,
+				535FC81726D494860024E865 /* GoogleService-Info.plist in Resources */,
 				536821CE26D31B9200EABAB8 /* Assets.xcassets in Resources */,
 				536821CC26D31B9100EABAB8 /* Main.storyboard in Resources */,
 			);

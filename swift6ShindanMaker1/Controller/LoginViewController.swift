@@ -6,13 +6,25 @@
 //
 
 import UIKit
+import FirebaseAuth
+import NVActivityIndicatorView
 
 class LoginViewController: UIViewController {
+    
+    var provider:OAuthProvider?
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        self.provider = OAuthProvider(providerID: TwitterAuthProvider)
+        provider?.customParameters = ["kang":"ja"]
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
     }
     
 
