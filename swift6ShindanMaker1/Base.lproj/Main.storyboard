@@ -20,6 +20,9 @@
                                 <rect key="frame" x="20" y="543" width="371" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" image="loginImage"/>
+                                <connections>
+                                    <action selector="twitterLogin:" destination="BYZ-38-t0r" eventType="touchUpInside" id="M5u-Uz-QjG"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -37,7 +40,7 @@
         <!--View Controller-->
         <scene sceneID="kL4-at-T5Y">
             <objects>
-                <viewController id="jzg-bo-SC1" customClass="ViewController" customModule="swift6ShindanMaker1" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="viewVC" useStoryboardIdentifierAsRestorationIdentifier="YES" id="jzg-bo-SC1" customClass="ViewController" customModule="swift6ShindanMaker1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="fAU-t1-tZU">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -63,6 +66,9 @@
                                 <state key="normal" title="Twitterでシェア">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="share:" destination="jzg-bo-SC1" eventType="touchUpInside" id="AG1-84-Fvz"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4DV-ey-q1H">
                                 <rect key="frame" x="-1" y="602" width="414" height="40"/>
@@ -71,6 +77,9 @@
                                 <state key="normal" title="アプリ内でシェア">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="sendData:" destination="jzg-bo-SC1" eventType="touchUpInside" id="ZgY-oN-oFo"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuN-VQ-rlp">
                                 <rect key="frame" x="179" y="770" width="57" height="48"/>
@@ -81,7 +90,8 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
                                 <connections>
-                                    <segue destination="AEi-Si-n9g" kind="presentation" modalPresentationStyle="fullScreen" id="Fbt-Vu-28z"/>
+                                    <action selector="toFeedVC:" destination="jzg-bo-SC1" eventType="touchUpInside" id="9Ys-N8-7Zw"/>
+                                    <segue destination="AEi-Si-n9g" kind="presentation" identifier="feedVC" modalPresentationStyle="fullScreen" id="Fbt-Vu-28z"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cMa-E2-8qe">
@@ -92,21 +102,28 @@
                                 <state key="normal" title="ログアウト">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </state>
+                                <connections>
+                                    <action selector="logout:" destination="jzg-bo-SC1" eventType="touchUpInside" id="ZgR-SV-VFM"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="1ho-jY-T9N"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
                     <navigationItem key="navigationItem" id="qCT-Vh-GpZ"/>
+                    <connections>
+                        <outlet property="meigenLabel" destination="ABG-ym-EOM" id="YVw-j4-eTH"/>
+                        <outlet property="toFeedButton" destination="vuN-VQ-rlp" id="3eu-PO-wej"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="G0O-Xg-2Iv" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1957.9710144927537" y="97.767857142857139"/>
         </scene>
-        <!--View Controller-->
+        <!--Feed View Controller-->
         <scene sceneID="0Hu-mH-48I">
             <objects>
-                <viewController id="AEi-Si-n9g" sceneMemberID="viewController">
+                <viewController id="AEi-Si-n9g" customClass="FeedViewController" customModule="swift6ShindanMaker1" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="XTh-tK-YqZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -116,7 +133,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="153" id="G9x-5Z-q0R">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="153" id="G9x-5Z-q0R" customClass="FeedCell" customModule="swift6ShindanMaker1" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="24.5" width="414" height="153"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="G9x-5Z-q0R" id="SPJ-aq-sHC">
@@ -135,6 +152,9 @@
                         <viewLayoutGuide key="safeArea" id="4eq-uA-FEF"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     </view>
+                    <connections>
+                        <outlet property="tableView" destination="Pkf-N1-vde" id="SvO-We-wLU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="oei-Ke-L9l" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

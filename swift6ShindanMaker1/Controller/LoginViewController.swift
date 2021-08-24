@@ -16,8 +16,8 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        self.provider = OAuthProvider(providerID: TwitterAuthProvider)
-        provider?.customParameters = ["kang":"ja"]
+        self.provider = OAuthProvider(providerID: TwitterAuthProviderID)
+        provider?.customParameters = ["lang":"ja"]
         // Do any additional setup after loading the view.
     }
     
@@ -27,7 +27,39 @@ class LoginViewController: UIViewController {
         
     }
     
-
+    @IBAction func twitterLogin(_ sender: Any) {
+        //Twittrerの認証を受ける
+        self.provider = OAuthProvider(providerID: TwitterAuthProviderID)
+        provider?.customParameters = ["force_login":"true"]
+        //ログインしたらcredentialに値が渡る
+        provider?.getCredentialWith(nil, completion: { credential, error in
+            
+            //ActivityIndicatorController
+            let activityView = NVActivityIndicatorView(frame: self.view.bounds, type: .ballBeat, color: .magenta, padding: .none)
+            self.view.addSubview(activityView)
+            
+            //ログイン
+            //credentialの値をFirebaseのAuthに持ってくる
+            //userが入らなければエラー、成功すればresultに入る
+            Auth.auth().signIn(with: credential!) { result, error in
+                
+                if error != nil{
+                    
+                    return
+                    
+                }
+                activityView.stopAnimating()
+                
+                //画面遷移
+                let viewVC = self.storyboard?.instantiateViewController(identifier: "ViewVC") as! ViewController
+                viewVC.userName = (result!.user.displayName!)
+                self.navigationController?.pushViewController(viewVC,animated: true)
+                
+            }
+        })
+        
+    }
+    
     /*
     // MARK: - Navigation
 
