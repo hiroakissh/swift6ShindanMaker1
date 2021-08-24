@@ -170,7 +170,7 @@ class ViewController: UIViewController,XMLParserDelegate,UIViewControllerTransit
         controller!.transitioningDelegate = self
         controller!.modalPresentationStyle = .custom
         controller!.modalPresentationCapturesStatusBarAppearance = true
-        controller!.interactiveTransition = interactiveTransition
+        controller!.intractiveTransition = interactiveTransition
         interactiveTransition.attach(to: controller!)
             
         

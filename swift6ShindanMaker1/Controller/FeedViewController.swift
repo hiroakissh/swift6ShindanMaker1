@@ -77,11 +77,45 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
 
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        <#code#>
+        return feeds.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        <#code#>
+        
+        let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
+        
+        cell.userNameLabel.text = "\(feeds[indexPath.row].userName)さんを表す名言"
+        cell.quoteLabel.text = feeds[indexPath.row].quote
+        cell.profileImageView.sd_setImage(with: URL(string: feeds[indexPath.row].profileURL), completed: nil)
+        
+        return cell
+        
+    }
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        
+        return view.frame.size.height/10
+        
+    }
+    
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        
+        let marginView = UIView()
+        marginView.backgroundColor = .clear
+        return marginView
+        
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        
+        return .leastNonzeroMagnitude
+        
+        
     }
     /*
     // MARK: - Navigation
