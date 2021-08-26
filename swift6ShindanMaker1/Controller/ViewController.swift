@@ -151,9 +151,13 @@ class ViewController: UIViewController,XMLParserDelegate,UIViewControllerTransit
     @IBAction func logout(_ sender: Any) {
         
         let firebaseAuth = Auth.auth()
+        //dismiss(animated: true, completion: nil)
+        self.navigationController?.popViewController(animated: true)
+
         do {
             try firebaseAuth.signOut()
             
+                        
         }catch let error as NSError
         {
             
