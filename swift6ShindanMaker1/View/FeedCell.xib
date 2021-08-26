@@ -13,7 +13,6 @@
                 <outlet property="profileImageView" destination="sOc-MN-EVy" id="H7m-rb-GLY"/>
                 <outlet property="quoteLabel" destination="ZNG-RX-6L1" id="l8a-Yo-g8U"/>
                 <outlet property="topView" destination="X5K-w2-ueI" id="oen-vn-v5A"/>
-                <outlet property="userNameLabel" destination="ECS-uI-9mp" id="zu1-GI-VV1"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -28,7 +27,7 @@
                 <outlet property="dataSource" destination="-1" id="Tng-2m-Rnh"/>
                 <outlet property="delegate" destination="-1" id="9aC-8N-iBw"/>
             </connections>
-            <point key="canvasLocation" x="56.521739130434788" y="-89.397321428571431"/>
+            <point key="canvasLocation" x="-248" y="-91"/>
         </tableView>
         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Fi2-Fc-Caq">
             <rect key="frame" x="0.0" y="0.0" width="42" height="21"/>
@@ -52,18 +51,12 @@
                             <constraint firstAttribute="height" constant="90" id="ljf-Uh-lh5"/>
                         </constraints>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ECS-uI-9mp">
-                        <rect key="frame" x="145" y="24" width="247" height="84.5"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNG-RX-6L1">
+                        <rect key="frame" x="145" y="22" width="247" height="101"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="247" id="SVq-zf-zyK"/>
+                            <constraint firstAttribute="width" constant="247" id="2pT-3n-u3S"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZNG-RX-6L1">
-                        <rect key="frame" x="145" y="116" width="247" height="20.5"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
@@ -77,17 +70,13 @@
                     </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="ZNG-RX-6L1" firstAttribute="top" secondItem="ECS-uI-9mp" secondAttribute="bottom" constant="37.5" id="03i-Z3-fCV"/>
-                    <constraint firstItem="ECS-uI-9mp" firstAttribute="top" secondItem="yKy-1n-X3A" secondAttribute="top" constant="24" id="2Td-sV-LPn"/>
-                    <constraint firstAttribute="trailing" secondItem="ZNG-RX-6L1" secondAttribute="trailing" constant="31" id="5PA-AA-wEV"/>
-                    <constraint firstAttribute="trailing" secondItem="ECS-uI-9mp" secondAttribute="trailing" constant="31" id="7UP-ll-znk"/>
                     <constraint firstItem="sOc-MN-EVy" firstAttribute="leading" secondItem="yKy-1n-X3A" secondAttribute="leading" constant="20" symbolic="YES" id="BVm-WN-cda"/>
+                    <constraint firstItem="ZNG-RX-6L1" firstAttribute="leading" secondItem="sOc-MN-EVy" secondAttribute="trailing" constant="35" id="E08-JH-YRv"/>
                     <constraint firstItem="sOc-MN-EVy" firstAttribute="top" secondItem="yKy-1n-X3A" secondAttribute="top" constant="33" id="L9e-tk-c36"/>
                     <constraint firstAttribute="trailing" secondItem="X5K-w2-ueI" secondAttribute="trailing" id="OJb-gz-rhN"/>
+                    <constraint firstItem="ZNG-RX-6L1" firstAttribute="top" secondItem="yKy-1n-X3A" secondAttribute="top" constant="22" id="Y5v-xF-4Xd"/>
                     <constraint firstItem="X5K-w2-ueI" firstAttribute="leading" secondItem="yKy-1n-X3A" secondAttribute="leading" id="eJx-Aj-wzL"/>
-                    <constraint firstItem="ECS-uI-9mp" firstAttribute="leading" secondItem="sOc-MN-EVy" secondAttribute="trailing" constant="35" id="euo-A5-RkT"/>
-                    <constraint firstItem="ZNG-RX-6L1" firstAttribute="leading" secondItem="sOc-MN-EVy" secondAttribute="trailing" constant="35" id="gVM-Qg-w8N"/>
-                    <constraint firstItem="ZNG-RX-6L1" firstAttribute="centerY" secondItem="yKy-1n-X3A" secondAttribute="bottom" id="q7y-ig-qNU"/>
+                    <constraint firstAttribute="bottom" secondItem="ZNG-RX-6L1" secondAttribute="bottom" constant="33" id="tl7-Ao-sfi"/>
                     <constraint firstItem="X5K-w2-ueI" firstAttribute="top" secondItem="yKy-1n-X3A" secondAttribute="top" id="xpY-e5-6RQ"/>
                 </constraints>
             </tableViewCellContentView>

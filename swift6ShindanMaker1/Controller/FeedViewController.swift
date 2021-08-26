@@ -33,6 +33,8 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         tableView.register(UINib(nibName: "FeedCell", bundle: nil), forCellReuseIdentifier: "feedCell")
         
         tableView.separatorStyle = .none
+        
+        loadData()
 
         // Do any additional setup after loading the view.
     }
@@ -40,7 +42,7 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     func loadData(){
         
         //投稿されたものを受信する
-        db.collection("feed").order(by: "createAt").addSnapshotListener { (snapShot,error) in
+        db.collection("feed").order(by: "createdAt").addSnapshotListener { (snapShot,error) in
             
             self.feeds = []
             if error != nil{
@@ -76,6 +78,15 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
     }
 
     
+    @IBAction func back(_ sender: Any) {
+        
+        dismiss(animated: true, completion: nil)
+        
+        intractiveTransition?.finish()
+        
+    }
+    
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return feeds.count
     }
@@ -84,11 +95,19 @@ class FeedViewController: UIViewController,UITableViewDelegate,UITableViewDataSo
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell", for: indexPath) as! FeedCell
         
-        cell.userNameLabel.text = "\(feeds[indexPath.row].userName)さんを表す名言"
-        cell.quoteLabel.text = feeds[indexPath.row].quote
+        //cell.userNameLabel.text = "\(feeds[indexPath.row].userName)さんを表す名言"
+        cell.quoteLabel.text =  "\(feeds[indexPath.row].userName)さんを表す名言" + "\n" + "\n" + feeds[indexPath.row].quote
         cell.profileImageView.sd_setImage(with: URL(string: feeds[indexPath.row].profileURL), completed: nil)
         
         return cell
+        
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        
+        tableView.estimatedRowHeight = 100
+        return UITableView.automaticDimension
+        
         
     }
     
